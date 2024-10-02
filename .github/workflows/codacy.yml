@@ -2,14 +2,14 @@ name: Deploy to Render
 
 on:
     push:
-      tags:
+      tags: # Ejercicio 3
       - 'v*' 
-    pull_request:
+    pull_request: # Ejercicio 1
       branches:
         - main
 
 jobs:
-
+  # Ejercicio 2 -> Antes para cada version de python se lanzaba un job en paralelo por cada version (3.10,3.11,3.12) ahora lo que hacemos es que ejecutamos un job y los test y si fallan los test no se ejecutan los siguientes jobs 
   testing:
 
     name: Run Tests
